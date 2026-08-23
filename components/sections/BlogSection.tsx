@@ -1,12 +1,11 @@
 import Image from "next/image";
-import PostCardRow from "../shared/PostCardRow";
-import SideContent from "../shared/SideContent";
 import LinkButton from "../shared/LinkButton";
 import { Separator } from "../ui/separator";
 import { getPayloadClient } from "@/lib/getPayload";
 import { customTimeFormat } from "@/lib/customTimeFormat";
 import { calculateReadTime } from "@/lib/readTime";
 import CustomButton from "../shared/CustomButton";
+import BlogSecCards from "./innerSections/BlogSecCards";
 
 export default async function BlogSection() {
   const payload = await getPayloadClient();
@@ -17,8 +16,10 @@ export default async function BlogSection() {
       status: { equals: "published" },
     },
     sort: "-publishedDate",
+    limit: 1,
   });
 
+  if (posts.length === 0) return;
   const firstPost = posts[posts.length - 1];
 
   return (
@@ -63,14 +64,8 @@ export default async function BlogSection() {
           className="w-full h-auto"
         />
       </div>
-      <div className="flex items-start flex-col xl:gap-20  xl:flex-row">
-        <div className="divide-y divide-black flex flex-col gap-10  flex-1">
-          {posts.slice(0, 4).map((post) => (
-            <PostCardRow key={post.id} post={post} />
-          ))}
-        </div>
-        <SideContent />
-      </div>
+
+      <BlogSecCards />
 
       <div className="my-15">
         <LinkButton text={"All blogs"} link={"/blogs"} />
