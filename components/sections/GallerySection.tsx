@@ -17,6 +17,7 @@ export default function GallerySection() {
                 src={`/images/${i + 1}.jpg`}
                 alt="Image"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 className="object-cover mix-blend-multiply md:grayscale-75 group-hover:grayscale-0 transition duration-200 ease-in group-hover:scale-105"
               />
               <div className="absolute w-15 h-10 bottom-5 left-5">

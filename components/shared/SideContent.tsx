@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ProfileImg from "@/public/images/image.jpg";
 
 export default function SideContent() {
   return (
@@ -7,11 +8,12 @@ export default function SideContent() {
       <div className="flex flex-col items-center bg-stone-900 w-full py-5">
         <div className="w-25 h-25 bg-white rounded-full mb-4 relative overflow-hidden">
           <Image
-            src="/images/image.jpg"
+            src={ProfileImg}
             alt="Profile picture"
             width={640}
             height={640}
-            objectFit="cover"
+            placeholder="blur"
+            className="object-cover"
           />
         </div>
         <p className="font-medium text-lg text-white">Stajor Dasturchi</p>

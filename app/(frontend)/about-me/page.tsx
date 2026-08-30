@@ -1,13 +1,14 @@
 import Container from "@/components/shared/Container";
 import GoBackButton from "@/components/shared/GoBackButton";
 import Image from "next/image";
+import AboutMeImg from "@/public/images/about-me.svg";
 
 export default function AboutMe() {
   return (
     <Container>
       <div className="mt-10 mb-20">
         <Image
-          src={"/images/about-me.svg"}
+          src={AboutMeImg}
           alt="Bannerdagi ABOUT ME rasmi"
           width={884}
           height={183}
@@ -24,8 +25,7 @@ export default function AboutMe() {
                   alt="Profile picture"
                   width={640}
                   height={640}
-                  objectFit="cover"
-                  className="hover:scale-105 transition duration-200 ease-in"
+                  className="object-cover hover:scale-105 transition duration-200 ease-in"
                 />
               </div>
               <h2 className="text-[24px] lg:text-4xl font-semibold flex flex-col">

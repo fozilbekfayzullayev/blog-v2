@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { useIsTruncated } from "@/app/hooks/useIsTruncated";
 import { Post } from "@/payload-types";
+import { useState } from "react";
 
 type PostCardProps = {
   post: Post; // loyihangizdagi Post type bilan almashtiring
@@ -19,6 +20,7 @@ type PostCardProps = {
 
 export default function PostCard({ post }: PostCardProps) {
   const { ref, isTruncated } = useIsTruncated<HTMLHeadingElement>();
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const imageUrl =
     typeof post.coverImage === "object" && post.coverImage?.url
@@ -39,11 +41,18 @@ export default function PostCard({ post }: PostCardProps) {
         href={`/blogs/${post.slug}`}
         className="block relative w-full aspect-video mb-3"
       >
+        {!isImageLoaded && (
+          <div className="absolute inset-0 animate-pulse bg-gray-200" />
+        )}
         <Image
           src={imageUrl}
           alt="Blog postidagi rasm"
           fill
-          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className={`object-cover transition-opacity duration-300 ${
+            isImageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setIsImageLoaded(true)}
         />
       </Link>
 

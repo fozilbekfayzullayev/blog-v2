@@ -6,6 +6,7 @@ import { customTimeFormat } from "@/lib/customTimeFormat";
 import { calculateReadTime } from "@/lib/readTime";
 import CustomButton from "../shared/CustomButton";
 import BlogSecCards from "./innerSections/BlogSecCards";
+import { notFound } from "next/navigation";
 
 export default async function BlogSection() {
   const payload = await getPayloadClient();
@@ -21,6 +22,12 @@ export default async function BlogSection() {
 
   if (posts.length === 0) return;
   const firstPost = posts[posts.length - 1];
+
+  if (!firstPost) notFound();
+  const imageUrl =
+    typeof firstPost.coverImage === "object" && firstPost.coverImage?.url
+      ? firstPost.coverImage.url
+      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
 
   return (
     <section className="pt-8 md:pt-12">
@@ -54,12 +61,10 @@ export default async function BlogSection() {
         </div>
 
         <Image
-          src={
-            "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg"
-          }
+          src={imageUrl}
           alt="Blog postidagi rasm"
-          width={0}
-          height={0}
+          width={1920}
+          height={1080}
           sizes="100vw"
           className="w-full h-auto"
         />

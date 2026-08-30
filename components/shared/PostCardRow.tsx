@@ -1,14 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import { Post } from "@/payload-types";
 import { calculateReadTime } from "@/lib/readTime";
 import { customTimeFormat } from "@/lib/customTimeFormat";
 import CustomButton from "./CustomButton";
+import { useState } from "react";
 
 type PostCardProps = {
   post: Post;
 };
 
 export default function PostCardRow({ post }: PostCardProps) {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const imageUrl =
     typeof post.coverImage === "object" && post.coverImage?.url
       ? post.coverImage.url
@@ -16,12 +21,19 @@ export default function PostCardRow({ post }: PostCardProps) {
 
   return (
     <div className="flex flex-col sm:flex-row gap-5 lg:gap-10 pb-10">
-      <div className="w-full sm:w-40 sm:h-40 md:w-50 md:h-50 aspect-square relative">
+      <div className="w-full sm:w-40 sm:h-40 md:w-50 md:h-50 aspect-square relative bg-gray-200">
+        {!isImageLoaded && (
+          <div className="absolute inset-0 animate-pulse bg-gray-200" />
+        )}
         <Image
           src={imageUrl}
           alt="Blog postidagi rasm"
           fill
-          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 160px, 200px"
+          className={`object-cover transition-opacity duration-300 ${
+            isImageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setIsImageLoaded(true)}
         />
       </div>
       <div>

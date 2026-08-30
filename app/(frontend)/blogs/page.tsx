@@ -11,6 +11,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import MyBlogsImg from "@/public/images/blogs.svg";
 
 const POSTS_PER_PAGE = 8;
 
@@ -40,7 +41,7 @@ export default async function Blogs({
     <Container>
       <div className="mt-10 mb-20">
         <Image
-          src={"/images/blogs.svg"}
+          src={MyBlogsImg}
           alt="Bannerdagi MY BLOGS rasmi"
           width={884}
           height={183}

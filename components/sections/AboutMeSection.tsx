@@ -1,5 +1,7 @@
 import Image from "next/image";
 import HeaderButton from "../shared/HeaderButton";
+import meImg from "@/public/images/me.png";
+import fayzekImg from "@/public/images/image.jpg";
 
 export default function AboutMeSection() {
   return (
@@ -12,12 +14,12 @@ export default function AboutMeSection() {
         <div className="flex items-center pr-10 gap-5 pb-5 lg:pb-0">
           <div className="w-25 h-25 sm:w-35 sm:h-35 aspect-square bg-stone-200 overflow-hidden cursor-pointer rounded-full border-5 border-black">
             <Image
-              src="/images/me.png"
+              src={meImg}
               alt="Profile picture"
               width={640}
               height={640}
-              objectFit="cover"
-              className="hover:scale-105 transition duration-200 ease-in"
+              placeholder="blur"
+              className="w-full h-full object-cover hover:scale-105 transition duration-200 ease-in"
             />
           </div>
           <h2 className="text-2xl">Fozilbek Fayzullayev</h2>
@@ -25,12 +27,12 @@ export default function AboutMeSection() {
         <div className="flex items-center gap-5 lg:ml-10 ">
           <div className="w-25 h-25 sm:w-35 sm:h-35 aspect-square bg-stone-200 overflow-hidden cursor-pointer rounded-full border-5 border-black">
             <Image
-              src="/images/image.jpg"
+              src={fayzekImg}
               alt="Profile picture"
               width={640}
               height={640}
-              objectFit="cover"
-              className="hover:scale-105 transition duration-200 ease-in"
+              placeholder="blur"
+              className="w-full h-full object-cover hover:scale-105 transition duration-200 ease-in"
             />
           </div>
           <h2 className="text-2xl">fayZek</h2>

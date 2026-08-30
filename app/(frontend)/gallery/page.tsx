@@ -5,6 +5,8 @@ import GoBackButton from "@/components/shared/GoBackButton";
 import { Separator } from "@/components/ui/separator";
 import { getPayloadClient } from "@/lib/getPayload";
 import Image from "next/image";
+import MyGalleryImg from "@/public/images/my-gallery.svg";
+import GalleryBannerImg from "@/public/images/gallery-banner.jpg";
 
 const POST_PER_PAGE = 8;
 
@@ -30,7 +32,7 @@ export default async function Gallery() {
     <Container>
       <div className="mt-10 mb-20">
         <Image
-          src={"/images/my-gallery.svg"}
+          src={MyGalleryImg}
           alt="Bannerdagi MY GALLERY rasmi"
           width={884}
           height={183}
@@ -38,12 +40,13 @@ export default async function Gallery() {
           priority
         />
         <Image
-          src={"/images/gallery-banner.jpg"}
-          alt="Bannerdagi MY GALLERY rasmi"
+          src={GalleryBannerImg}
+          alt="Bannerdagi fayzek rasmi"
           width={884}
           height={183}
+          sizes="100vw"
+          placeholder="blur"
           className="w-full mb-10 object-cover mx-auto"
-          priority
         />
 
         <div className="mb-5">

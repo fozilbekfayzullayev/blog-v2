@@ -4,13 +4,14 @@ import GallerySection from "@/components/sections/GallerySection";
 import Container from "@/components/shared/Container";
 import Image from "next/image";
 import AboutMeSection from "@/components/sections/AboutMeSection";
+import ArtLiveImg from "@/public/images/art-live.svg";
 
 export default function Home() {
   return (
     <Container>
       <div className="pt-10">
         <Image
-          src={"/images/art-live.svg"}
+          src={ArtLiveImg}
           alt="Bannerdagi ART&LIFE rasmi"
           width={1358}
           height={183}
