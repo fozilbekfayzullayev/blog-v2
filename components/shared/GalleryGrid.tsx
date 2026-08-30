@@ -35,7 +35,7 @@ export default function GalleryGrid({
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-10 lg:my-20">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-10 lg:my-20">
         {images.map((img, i) => (
           <GalleryImage key={i} img={img} onClick={() => setIndex(i)} />
         ))}

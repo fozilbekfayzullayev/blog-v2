@@ -9,17 +9,12 @@ export const Gallery: CollectionConfig = {
   access: {
     read: () => true,
   },
+  upload: true, // <-- shu qo'shildi: endi Gallery Media kabi bulk upload'ni qabul qiladi
   fields: [
     {
       name: "title",
       type: "text",
-      required: true,
-    },
-    {
-      name: "image",
-      type: "upload",
-      relationTo: "media",
-      required: true,
+      required: false, // <-- majburiy emas qilindi, aks holda bulk upload'da 155 tasiga birma-bir title yozishga majbur bo'lasiz
     },
     {
       name: "description",

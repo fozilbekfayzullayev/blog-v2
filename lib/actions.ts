@@ -17,9 +17,8 @@ export async function loadMoreImages(page: number) {
 
   const images = docs
     .map((item) => {
-      const img = typeof item.image === "object" ? item.image : null;
-      return img?.url
-        ? { url: img.url, alt: img.alt || item.title || "Gallery rasm" }
+      return item.url
+        ? { url: item.url, alt: item.title || item.filename || "Gallery rasm" }
         : null;
     })
     .filter((img): img is { url: string; alt: string } => img !== null);

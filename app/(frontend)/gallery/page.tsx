@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Container from "@/components/shared/Container";
 import EmptySection from "@/components/shared/EmptySection";
 import GalleryGrid from "@/components/shared/GalleryGrid";
@@ -21,9 +22,8 @@ export default async function Gallery() {
 
   const images = items
     .map((item) => {
-      const img = typeof item.image === "object" ? item.image : null;
-      return img?.url
-        ? { url: img.url, alt: img.alt || item.title || "Gallery rasm" }
+      return item.url
+        ? { url: item.url, alt: item.title || item.filename || "Gallery rasm" }
         : null;
     })
     .filter((img): img is { url: string; alt: string } => img !== null);
@@ -46,8 +46,45 @@ export default async function Gallery() {
           height={183}
           sizes="100vw"
           placeholder="blur"
-          className="w-full mb-10 object-cover mx-auto"
+          className="w-full object-cover mx-auto"
         />
+
+        <div className="w-full bg-black text-white flex items-center py-3 md:py-6 overflow-hidden mb-10 lg:mb-12">
+          <p className="font-bold px-3 whitespace-nowrap shrink-0 text-sm md:text-lg">
+            QUOTE+++
+          </p>
+          <div className="flex overflow-hidden whitespace-nowrap w-full">
+            <div className="flex animate-marquee shrink-0">
+              <p className="text-sm md:text-lg flex shrink-0">
+                <span className="px-5">
+                  Har bir bola — ijodkor (rassom). Asosiy muammo — ulg'aygach
+                  ham ijodkor bo'lib qolishda. -- Pablo Pikasso
+                </span>
+                <span className="px-5">++++</span>
+                <span className="px-5">
+                  Har bir bola — ijodkor (rassom). Asosiy muammo — ulg'aygach
+                  ham ijodkor bo'lib qolishda. -- Pablo Pikasso
+                </span>
+                <span className="px-5">++++</span>
+              </p>
+              <p
+                className="text-sm md:text-lg flex shrink-0"
+                aria-hidden="true"
+              >
+                <span className="px-5">
+                  Har bir bola — ijodkor (rassom). Asosiy muammo — ulg'aygach
+                  ham ijodkor bo'lib qolishda. -- Pablo Pikasso
+                </span>
+                <span className="px-5">++++</span>
+                <span className="px-5">
+                  Har bir bola — ijodkor (rassom). Asosiy muammo — ulg'aygach
+                  ham ijodkor bo'lib qolishda. -- Pablo Pikasso
+                </span>
+                <span className="px-5">++++</span>
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div className="mb-5">
           <GoBackButton link="/" text="Back" />
