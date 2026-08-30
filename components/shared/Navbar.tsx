@@ -6,6 +6,8 @@ import { Separator } from "../ui/separator";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import Image from "next/image";
+import Logo from "@/public/images/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +21,14 @@ export default function Navbar() {
     <nav className="sticky md:static top-0 bg-white z-50">
       <Container>
         <div className="flex items-center justify-between pt-5 md:pt-8 pb-5">
-          <Link href={"/"} className="font-bold text-2xl">
-            <span>fozilbek.</span>
-            <span className="text-orange-500">blog</span>
+          <Link href={"/"}>
+            <Image
+              src={Logo}
+              alt="fozilbek.blog logo"
+              width={145}
+              height={32}
+              className="w-full object-cover"
+            />
           </Link>
           {/* MENU */}
           <Button
