@@ -25,9 +25,8 @@ export default function Navbar() {
             <Image
               src={Logo}
               alt="fozilbek.blog logo"
-              width={145}
-              height={32}
-              className="w-full object-cover"
+              priority
+              className="h-8 w-auto"
             />
           </Link>
           {/* MENU */}
