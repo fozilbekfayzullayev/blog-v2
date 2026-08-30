@@ -1,4 +1,5 @@
 import Container from "@/components/shared/Container";
+import EmptySection from "@/components/shared/EmptySection";
 import GalleryGrid from "@/components/shared/GalleryGrid";
 import GoBackButton from "@/components/shared/GoBackButton";
 import { Separator } from "@/components/ui/separator";
@@ -52,7 +53,7 @@ export default async function Gallery() {
         <Separator className="bg-black" />
         <div>
           {images.length === 0 ? (
-            <p>No image yet</p>
+            <EmptySection />
           ) : (
             <GalleryGrid
               initialImages={images}

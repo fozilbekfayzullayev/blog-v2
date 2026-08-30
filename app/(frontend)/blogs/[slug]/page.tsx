@@ -63,7 +63,7 @@ export default async function BlogBySlug({
         <RichText data={post.content} className="text-lg" />
       </div>
       <Separator className="bg-black my-10" />
-      <LastPosts />
+      <LastPosts initialSlug={post.slug} />
     </Container>
   );
 }

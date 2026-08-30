@@ -1,12 +1,21 @@
 import { getPayloadClient } from "@/lib/getPayload";
 import PostCard from "./PostCard";
 
-export default async function LastPosts() {
+export default async function LastPosts({
+  initialSlug,
+}: {
+  initialSlug: string;
+}) {
   const payload = await getPayloadClient();
 
   const { docs: posts } = await payload.find({
     collection: "posts",
-    where: { status: { equals: "published" } },
+    where: {
+      and: [
+        { status: { equals: "published" } },
+        { slug: { not_equals: initialSlug } },
+      ],
+    },
     sort: "-publishedDate",
     limit: 4,
   });

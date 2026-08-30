@@ -54,18 +54,27 @@ export default async function Blogs({
           </p>
           <div className="flex overflow-hidden whitespace-nowrap w-full">
             <div className="flex animate-marquee shrink-0">
-              <p className="text-sm md:text-lg z-0">
+              <p className="text-sm md:text-lg flex shrink-0">
                 <span className="px-5">
-                  This blog property of the Half Blood Prince
-                </span>{" "}
+                  This blog is the property of the Half Blood Prince
+                </span>
                 <span className="px-5">++++</span>
                 <span className="px-5">
-                  This blog property of the Half Blood Prince
-                </span>{" "}
+                  This blog is the property of the Half Blood Prince
+                </span>
+                <span className="px-5">++++</span>
+              </p>
+              <p
+                className="text-sm md:text-lg flex shrink-0"
+                aria-hidden="true"
+              >
+                <span className="px-5">
+                  This blog is the property of the Half Blood Prince
+                </span>
                 <span className="px-5">++++</span>
                 <span className="px-5">
-                  This blog property of the Half Blood Prince
-                </span>{" "}
+                  This blog is the property of the Half Blood Prince
+                </span>
                 <span className="px-5">++++</span>
               </p>
             </div>

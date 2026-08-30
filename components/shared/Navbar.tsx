@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className="sticky md:static top-0 bg-white z-50">
       <Container>
         <div className="flex items-center justify-between pt-5 md:pt-8 pb-5">
-          <Link href={"/"} className="font-bold text-2xl z-50">
+          <Link href={"/"} className="font-bold text-2xl">
             <span>fozilbek.</span>
             <span className="text-orange-500">blog</span>
           </Link>

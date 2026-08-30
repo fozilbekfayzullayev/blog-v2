@@ -13,7 +13,7 @@
     "@payloadcms/db-postgres": "^3.87.1",
     "@payloadcms/next": "^3.87.1",
     "@payloadcms/richtext-lexical": "^3.87.1",
-    "@payloadcms/storage-vercel-blob": "^3.88.0",
+    "@payloadcms/storage-vercel-blob": "^3.87.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "graphql": "^17.0.2",

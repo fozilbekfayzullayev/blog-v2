@@ -17,7 +17,7 @@ export default function GallerySection() {
                 src={`/images/${i + 1}.jpg`}
                 alt="Image"
                 fill
-                className="object-cover mix-blend-multiply grayscale-75 group-hover:grayscale-0 transition duration-200 ease-in group-hover:scale-105"
+                className="object-cover mix-blend-multiply md:grayscale-75 group-hover:grayscale-0 transition duration-200 ease-in group-hover:scale-105"
               />
               <div className="absolute w-15 h-10 bottom-5 left-5">
                 <div className="absolute left-0 top-0 w-0.5 h-full bg-white"></div>
