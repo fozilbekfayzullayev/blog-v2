@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Container from "@/components/shared/Container";
 import GoBackButton from "@/components/shared/GoBackButton";
 import Image from "next/image";
@@ -34,15 +35,20 @@ export default function AboutMe() {
               </h2>
             </div>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-              repellat, corporis esse, vero neque ab tempore optio quas fuga
-              deleniti iure voluptate suscipit debitis, dolor facilis
-              perspiciatis inventore cupiditate beatae doloremque. Asperiores
-              obcaecati quos hic veritatis harum minima voluptas, dolorum ut ea
-              similique placeat doloribus minus quod cupiditate alias delectus
-              repudiandae nihil vero natus, culpa odio ex. Vero dignissimos vel
-              ad ullam accusantium quis eum facilis. Ullam ut amet natus quidem
-              ipsum sequi doloribus minus, veritatis repellat eligendi fugit ex.
+              Salom! Mening blog sahifam va ijodiy ishlarim jamlangan saytimga
+              xush kelibsiz! Men dasturlashga qiziqadigan va doim nimanidir
+              o'rganib yuradigan odamman. Hozirda ko'proq web dasturlash bilan
+              shug'ullanyapman. JavaScript, React, Next.js va boshqa zamonaviy
+              texnologiyalar bilan ishlash menga yoqadi. Hozir asosiy
+              e'tiborimni web dasturlashni chuqurroq o'rganishga qaratganman.
+              Yangi texnologiyalarni sinab ko'rish, kichik loyihalar qilish va
+              xatolar orqali o'rganish — mening eng ko'p foydalanadigan
+              o'rganish usulim. Dasturlashdan tashqari, yangi texnologiyalar,
+              internetdagi qiziqarli loyihalar va turli xil g'oyalar meni
+              qiziqtiradi. Ba'zan biror narsani shunchaki qiziq bo'lgani uchun
+              o'rganib ketaman. Natijada kichik bir qiziqish yangi loyiha yoki
+              yangi bilimga aylanib qoladi. Masalan elektronika, bu boyicha
+              qilgan kichik ishlarimni telegram kanalimda ko'rishingiz mumkin.
             </p>
           </div>
           <div className="flex flex-col gap-5 bg-teal-900 py-8 px-5 md:px-10 text-white">
@@ -60,15 +66,15 @@ export default function AboutMe() {
               <h2 className="text-[24px] lg:text-4xl font-semibold">fayZek</h2>
             </div>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-              repellat, corporis esse, vero neque ab tempore optio quas fuga
-              deleniti iure voluptate suscipit debitis, dolor facilis
-              perspiciatis inventore cupiditate beatae doloremque. Asperiores
-              obcaecati quos hic veritatis harum minima voluptas, dolorum ut ea
-              similique placeat doloribus minus quod cupiditate alias delectus
-              repudiandae nihil vero natus, culpa odio ex. Vero dignissimos vel
-              ad ullam accusantium quis eum facilis. Ullam ut amet natus quidem
-              ipsum sequi doloribus minus, veritatis repellat eligendi fugit ex.
+              Salom! Bu fayZek mening ijodkorroq tarafim. Arts bo'limida shu
+              nicknameni ko'rishingiz mumkin, fayZek_art. Buni 2019 yil twitter
+              uchun nickname qilib beradikan saytda yasab olganman, keyin
+              o'yinlar uchun nickname sifatida ishlatdim keyin rasmlarga ham.
+              Nickname? bunday oliftagarchilik nega kerak deyishingiz mumkin, ha
+              shunday ko'rinishi mumkin, lekin men yoshligimdan street
+              artistlarni kuzatganim uchun men ham nickname qo'ydim. Misol:
+              Inkuzart, Gawxart, Wexxart, Banksy. Xullas shunday gaplar. Enjoy
+              my art ;)
             </p>
           </div>
         </div>
