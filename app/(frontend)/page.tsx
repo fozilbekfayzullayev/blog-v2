@@ -5,6 +5,8 @@ import Container from "@/components/shared/Container";
 import Image from "next/image";
 import AboutMeSection from "@/components/sections/AboutMeSection";
 import ArtLiveImg from "@/public/images/art-live.svg";
+import { Suspense } from "react";
+import BlogSectionSkeleton from "@/components/shared/BlogSectionSkeleton";
 
 export default function Home() {
   return (
@@ -51,7 +53,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <BlogSection />
+      <Suspense fallback={<BlogSectionSkeleton />}>
+        <BlogSection />
+      </Suspense>
       <GallerySection />
       <AboutMeSection />
     </Container>
