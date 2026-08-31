@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "Shaxsiy blog va ijodiy ishlar jamlangan web sayt",
   openGraph: {
     title: "Fozilbek | Blog",
-    description: "Shaxsiy blog va ijodiy ishlar",
+    description: "Shaxsiy blog va ijodiy ishlar jamlanmasi.",
     url: "https://blog-v2-blond.vercel.app",
     siteName: "Fozilbek",
     locale: "uz_UZ",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fozilbek | Blog",
-    description: "Shaxsiy blog va portfolio.",
+    description: "Shaxsiy blog va ijodiy ishlar jamlanmasi.",
   },
   robots: {
     index: true,

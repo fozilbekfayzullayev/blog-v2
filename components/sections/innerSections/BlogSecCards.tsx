@@ -10,7 +10,7 @@ export default async function BlogSecCards() {
     where: {
       status: { equals: "published" },
     },
-    sort: "-publishedData",
+    sort: "-publishedDate",
     limit: 5,
   });
 

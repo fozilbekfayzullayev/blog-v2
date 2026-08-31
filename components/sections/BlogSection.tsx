@@ -66,7 +66,7 @@ export default async function BlogSection() {
           width={1920}
           height={1080}
           sizes="100vw"
-          className="w-full h-auto"
+          className="w-full h-160 object-cover border"
         />
       </div>
 
