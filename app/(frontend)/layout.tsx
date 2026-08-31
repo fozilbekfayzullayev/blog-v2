@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png", // metadataBase tufayli avtomatik to'liq URL bo'ladi
+        url: "/images/og-image.png", // metadataBase tufayli avtomatik to'liq URL bo'ladi
         width: 1200,
         height: 630,
         alt: "Fozilbek | Blog",
