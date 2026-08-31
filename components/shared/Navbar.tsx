@@ -35,6 +35,7 @@ export default function Navbar() {
             size={"icon-lg"}
             className="cursor-pointer z-50"
             onClick={menuHandler}
+            aria-label="Menyuni ochish/yopish"
           >
             {!isOpen ? (
               <IoIosMenu className="block md:hidden cursor-pointer w-8! h-8!" />
@@ -83,12 +84,19 @@ export default function Navbar() {
                 <Link
                   href={"https://www.linkedin.com/in/ffozilbek/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profilim"
                 >
                   <FaLinkedin size={24} />
                 </Link>
               </li>
               <li>
-                <Link href={"https://t.me/wzworld"} target="_blank">
+                <Link
+                  href={"https://t.me/wzworld"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram profilim"
+                >
                   <FaTelegram size={24} />
                 </Link>
               </li>
@@ -96,6 +104,8 @@ export default function Navbar() {
                 <Link
                   href={"https://www.pinterest.com/fayZekart/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Pinterest profilim"
                 >
                   <FaPinterest size={24} />
                 </Link>
@@ -127,12 +137,19 @@ export default function Navbar() {
                 <Link
                   href={"https://www.linkedin.com/in/ffozilbek/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profilim"
                 >
                   <FaLinkedin size={32} />
                 </Link>
               </li>
               <li onClick={menuHandler}>
-                <Link href={"https://t.me/wzworld"} target="_blank">
+                <Link
+                  href={"https://t.me/wzworld"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram profilim"
+                >
                   <FaTelegram size={32} />
                 </Link>
               </li>
@@ -140,6 +157,8 @@ export default function Navbar() {
                 <Link
                   href={"https://www.pinterest.com/fayZekart/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Pinterest profilim"
                 >
                   <FaPinterest size={32} />
                 </Link>

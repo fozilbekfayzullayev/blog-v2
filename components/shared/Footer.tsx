@@ -49,12 +49,19 @@ export default function Footer() {
                 <Link
                   href={"https://www.linkedin.com/in/ffozilbek/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profilim"
                 >
                   <FaLinkedin size={24} />
                 </Link>
               </li>
               <li>
-                <Link href={"https://t.me/wzworld"} target="_blank">
+                <Link
+                  href={"https://t.me/wzworld"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram profilim"
+                >
                   <FaTelegram size={24} />
                 </Link>
               </li>
@@ -62,6 +69,8 @@ export default function Footer() {
                 <Link
                   href={"https://www.pinterest.com/fayZekart/"}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Pinterest profilim"
                 >
                   <FaPinterest size={24} />
                 </Link>
