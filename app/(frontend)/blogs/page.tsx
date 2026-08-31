@@ -51,7 +51,7 @@ export default async function Blogs({
 
         <div className="w-full bg-black text-white flex items-center py-3 md:py-6 overflow-hidden mb-10 lg:mb-15">
           <p className="font-bold px-3 whitespace-nowrap shrink-0 text-sm md:text-lg">
-            QUOTE TICKER+++
+            QUOTE+++
           </p>
           <div className="flex overflow-hidden whitespace-nowrap w-full">
             <div className="flex animate-marquee shrink-0">
