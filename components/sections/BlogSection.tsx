@@ -33,7 +33,7 @@ export default async function BlogSection() {
     <section className="pt-8 md:pt-12">
       <div className="flex flex-col-reverse sm:flex-col gap-5 md:gap-10 mb-20">
         <div className="flex items-start gap-5 flex-col md:flex-row">
-          <h2 className="flex-1 md:flex-2/5 lg:flex-1/2 text-6xl font-bold uppercase">
+          <h2 className="flex-1 md:flex-2/5 lg:flex-1/2 text-4xl md:text-6xl font-bold uppercase">
             {firstPost.title}
           </h2>
           <div className="flex-1 md:flex-3/5 lg:flex-1/2">
