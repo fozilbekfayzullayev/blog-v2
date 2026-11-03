@@ -19,7 +19,9 @@ export default async function BlogBySlug({
 
   const { docs } = await payload.find({
     collection: "posts",
-    where: { slug: { equals: slug } },
+    where: {
+      and: [{ status: { equals: "published" } }, { slug: { equals: slug } }],
+    },
     limit: 1,
   });
 
