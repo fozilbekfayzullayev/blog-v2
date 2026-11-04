@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`h-full antialiased`} suppressHydrationWarning>
+    <html lang="uz" className={`h-full antialiased`} suppressHydrationWarning>
       <link
         rel="preload"
         href="/fonts/Inter18pt-Regular.woff2"
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       />
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <TooltipProvider>
-          <ThemeProvider attribute="class" defaultTheme="" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <div className="flex flex-col h-full">
               <Navbar />
               <main className="flex-1">{children}</main>

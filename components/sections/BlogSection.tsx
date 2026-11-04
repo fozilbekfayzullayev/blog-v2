@@ -6,7 +6,7 @@ import { customTimeFormat } from "@/lib/customTimeFormat";
 import { calculateReadTime } from "@/lib/readTime";
 import CustomButton from "../shared/CustomButton";
 import BlogSecCards from "./innerSections/BlogSecCards";
-import { notFound } from "next/navigation";
+import { FALLBACK_IMAGE } from "@/lib/postCard";
 
 export default async function BlogSection() {
   const payload = await getPayloadClient();
@@ -17,17 +17,16 @@ export default async function BlogSection() {
       status: { equals: "published" },
     },
     sort: "-publishedDate",
-    limit: 1,
+    limit: 5,
   });
 
-  if (posts.length === 0) return;
-  const firstPost = posts[posts.length - 1];
+  const [firstPost, ...restPosts] = posts;
+  if (!firstPost) return null;
 
-  if (!firstPost) notFound();
   const imageUrl =
     typeof firstPost.coverImage === "object" && firstPost.coverImage?.url
       ? firstPost.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+      : FALLBACK_IMAGE;
 
   return (
     <section className="pt-8 md:pt-12">
@@ -70,7 +69,7 @@ export default async function BlogSection() {
         />
       </div>
 
-      <BlogSecCards />
+      <BlogSecCards posts={restPosts} />
 
       <div className="my-15">
         <LinkButton text={"All blogs"} link={"/blogs"} />

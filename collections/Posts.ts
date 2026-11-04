@@ -8,7 +8,10 @@ export const Posts: CollectionConfig = {
     defaultColumns: ["title", "publishedDate", "status"],
   },
   access: {
-    read: () => true, // hammaga ochiq o'qish
+    read: ({ req }) => {
+      if (req.user) return true;
+      return { status: { equals: "published" } };
+    },
   },
   fields: [
     {

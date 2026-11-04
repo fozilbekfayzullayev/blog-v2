@@ -17,7 +17,8 @@ if (!databaseUrl)
   throw new Error("DATABASE_URL environment variable topilmadi");
 if (!payloadSecret)
   throw new Error("PAYLOAD_SECRET environment variable topilmadi");
-if (!blobReadWriteToken)
+// Production'da token majburiy. Lokalda token bo'lmasa fayllar diskka saqlanadi.
+if (!blobReadWriteToken && process.env.NODE_ENV === "production")
   throw new Error("BLOB_READ_WRITE_TOKEN environment variable topilmadi");
 
 export default buildConfig({
@@ -31,6 +32,7 @@ export default buildConfig({
   }),
   plugins: [
     vercelBlobStorage({
+      enabled: Boolean(blobReadWriteToken),
       collections: { media: true, gallery: true },
       token: blobReadWriteToken,
     }),

@@ -1,23 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { Post } from "@/payload-types";
-import { calculateReadTime } from "@/lib/readTime";
+import { PostCardData } from "@/lib/postCard";
 import { customTimeFormat } from "@/lib/customTimeFormat";
 import CustomButton from "./CustomButton";
 import { useState } from "react";
 
 type PostCardProps = {
-  post: Post;
+  post: PostCardData;
 };
 
 export default function PostCardRow({ post }: PostCardProps) {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const imageUrl =
-    typeof post.coverImage === "object" && post.coverImage?.url
-      ? post.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+  const imageUrl = post.imageUrl;
+  const readTime = post.readTime;
 
   return (
     <div className="flex flex-col sm:flex-row gap-5 lg:gap-10 pb-10">
@@ -50,7 +47,7 @@ export default function PostCardRow({ post }: PostCardProps) {
             </p>
             <p className="text-sm shrink-0">
               <span className="font-bold">Read: </span>
-              <span>{calculateReadTime(post.content)} min</span>
+              <span>{readTime} min</span>
             </p>
           </div>
           <div>

@@ -3,33 +3,51 @@ import GoBackButton from "@/components/shared/GoBackButton";
 import LastPosts from "@/components/shared/LastPosts";
 import { Separator } from "@/components/ui/separator";
 import { customTimeFormat } from "@/lib/customTimeFormat";
-import { getPayloadClient } from "@/lib/getPayload";
+import { getPost } from "@/lib/getPost";
+import { FALLBACK_IMAGE } from "@/lib/postCard";
 import { calculateReadTime } from "@/lib/readTime";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-export default async function BlogBySlug({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const payload = await getPayloadClient();
+  const post = await getPost(slug);
 
-  const { docs } = await payload.find({
-    collection: "posts",
-    where: { slug: { equals: slug } },
-    limit: 1,
-  });
+  if (!post) return { title: "Post topilmadi" };
 
-  const post = docs[0];
+  const imageUrl =
+    typeof post.coverImage === "object" && post.coverImage?.url
+      ? post.coverImage.url
+      : FALLBACK_IMAGE;
+
+  return {
+    title: post.title,
+    description: post.excerpt ?? undefined,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt ?? undefined,
+      type: "article",
+      publishedTime: post.publishedDate ?? undefined,
+      siteName: "Fozilbek",
+      locale: "uz_UZ",
+      images: [{ url: imageUrl, alt: post.title }],
+    },
+  };
+}
+
+export default async function BlogBySlug({ params }: Props) {
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) notFound();
   const imageUrl =
     typeof post.coverImage === "object" && post.coverImage?.url
       ? post.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+      : FALLBACK_IMAGE;
 
   return (
     <Container>
