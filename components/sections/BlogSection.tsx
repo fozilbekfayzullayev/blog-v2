@@ -7,6 +7,7 @@ import { calculateReadTime } from "@/lib/readTime";
 import CustomButton from "../shared/CustomButton";
 import BlogSecCards from "./innerSections/BlogSecCards";
 import { notFound } from "next/navigation";
+import { FALLBACK_IMAGE } from "@/lib/postCard";
 
 export default async function BlogSection() {
   const payload = await getPayloadClient();
@@ -27,7 +28,7 @@ export default async function BlogSection() {
   const imageUrl =
     typeof firstPost.coverImage === "object" && firstPost.coverImage?.url
       ? firstPost.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+      : FALLBACK_IMAGE;
 
   return (
     <section className="pt-8 md:pt-12">

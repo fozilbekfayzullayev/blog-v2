@@ -4,28 +4,25 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomButton from "@/components/shared/CustomButton";
 import { customTimeFormat } from "@/lib/customTimeFormat";
-import { calculateReadTime } from "@/lib/readTime";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useIsTruncated } from "@/app/hooks/useIsTruncated";
-import { Post } from "@/payload-types";
 import { useState } from "react";
+import { PostCardData } from "@/lib/postCard";
 
 type PostCardProps = {
-  post: Post; // loyihangizdagi Post type bilan almashtiring
+  post: PostCardData;
 };
 
 export default function PostCard({ post }: PostCardProps) {
   const { ref, isTruncated } = useIsTruncated<HTMLHeadingElement>();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const imageUrl =
-    typeof post.coverImage === "object" && post.coverImage?.url
-      ? post.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+  const imageUrl = post.imageUrl;
+  const readTime = post.readTime;
 
   const heading = (
     <h2 ref={ref} className="text-xl font-semibold mb-2 line-clamp-2 w-fit">
@@ -82,8 +79,7 @@ export default function PostCard({ post }: PostCardProps) {
           <CustomButton link={`/blogs/${post.slug}`} text="Read more" />
         </div>
         <p className="text-sm">
-          <span className="font-bold">Read:</span>{" "}
-          {calculateReadTime(post.content)} min
+          <span className="font-bold">Read:</span> <span>{readTime} min</span>
         </p>
       </div>
     </div>

@@ -4,6 +4,7 @@ import LastPosts from "@/components/shared/LastPosts";
 import { Separator } from "@/components/ui/separator";
 import { customTimeFormat } from "@/lib/customTimeFormat";
 import { getPayloadClient } from "@/lib/getPayload";
+import { FALLBACK_IMAGE } from "@/lib/postCard";
 import { calculateReadTime } from "@/lib/readTime";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import Image from "next/image";
@@ -31,7 +32,7 @@ export default async function BlogBySlug({
   const imageUrl =
     typeof post.coverImage === "object" && post.coverImage?.url
       ? post.coverImage.url
-      : "https://cdn.prod.website-files.com/6240546a63932414bcd71bf5/6240a3d49d0194e1ec5e9d68_post-dont-close-your-eyes.jpg";
+      : FALLBACK_IMAGE;
 
   return (
     <Container>

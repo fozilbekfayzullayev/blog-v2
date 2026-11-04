@@ -12,6 +12,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import MyBlogsImg from "@/public/images/blogs.svg";
+import { toPostCardData } from "@/lib/postCard";
 
 const POSTS_PER_PAGE = 8;
 
@@ -88,7 +89,7 @@ export default async function Blogs({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <PostCard key={post.id} post={toPostCardData(post)} />
           ))}
         </div>
 

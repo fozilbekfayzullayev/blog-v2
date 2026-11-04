@@ -1,5 +1,6 @@
 import { getPayloadClient } from "@/lib/getPayload";
 import PostCard from "./PostCard";
+import { toPostCardData } from "@/lib/postCard";
 
 export default async function LastPosts({
   initialSlug,
@@ -25,7 +26,7 @@ export default async function LastPosts({
       <h2 className="text-5xl font-bold mb-5">Last Posts</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={toPostCardData(post)} />
         ))}
       </div>
     </div>
