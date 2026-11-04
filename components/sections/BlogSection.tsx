@@ -6,7 +6,6 @@ import { customTimeFormat } from "@/lib/customTimeFormat";
 import { calculateReadTime } from "@/lib/readTime";
 import CustomButton from "../shared/CustomButton";
 import BlogSecCards from "./innerSections/BlogSecCards";
-import { notFound } from "next/navigation";
 import { FALLBACK_IMAGE } from "@/lib/postCard";
 
 export default async function BlogSection() {
@@ -18,13 +17,12 @@ export default async function BlogSection() {
       status: { equals: "published" },
     },
     sort: "-publishedDate",
-    limit: 1,
+    limit: 5,
   });
 
-  if (posts.length === 0) return;
-  const firstPost = posts[posts.length - 1];
+  const [firstPost, ...restPosts] = posts;
+  if (!firstPost) return null;
 
-  if (!firstPost) notFound();
   const imageUrl =
     typeof firstPost.coverImage === "object" && firstPost.coverImage?.url
       ? firstPost.coverImage.url
@@ -71,7 +69,7 @@ export default async function BlogSection() {
         />
       </div>
 
-      <BlogSecCards />
+      <BlogSecCards posts={restPosts} />
 
       <div className="my-15">
         <LinkButton text={"All blogs"} link={"/blogs"} />
