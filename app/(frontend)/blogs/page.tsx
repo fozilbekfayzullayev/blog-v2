@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/pagination";
 import MyBlogsImg from "@/public/images/blogs.svg";
 import { toPostCardData } from "@/lib/postCard";
+import { notFound } from "next/navigation";
 
 const POSTS_PER_PAGE = 8;
 
@@ -22,7 +23,9 @@ export default async function Blogs({
   searchParams: Promise<{ page?: string }>;
 }) {
   const { page } = await searchParams;
-  const currentPage = Number(page) || 1;
+  const parsed = Number(page);
+  const currentPage = Number.isInteger(parsed) && parsed > 0 ? parsed : 1;
+
   const payload = await getPayloadClient();
 
   const {
@@ -37,6 +40,8 @@ export default async function Blogs({
     limit: POSTS_PER_PAGE,
     page: currentPage,
   });
+
+  if (currentPage > 1 && currentPage > totalPages) notFound();
 
   return (
     <Container>
