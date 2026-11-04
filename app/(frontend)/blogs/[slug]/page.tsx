@@ -3,12 +3,41 @@ import GoBackButton from "@/components/shared/GoBackButton";
 import LastPosts from "@/components/shared/LastPosts";
 import { Separator } from "@/components/ui/separator";
 import { customTimeFormat } from "@/lib/customTimeFormat";
-import { getPayloadClient } from "@/lib/getPayload";
+import { getPost } from "@/lib/getPost";
 import { FALLBACK_IMAGE } from "@/lib/postCard";
 import { calculateReadTime } from "@/lib/readTime";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPost(slug);
+
+  if (!post) return { title: "Post topilmadi" };
+
+  const imageUrl =
+    typeof post.coverImage === "object" && post.coverImage?.url
+      ? post.coverImage.url
+      : FALLBACK_IMAGE;
+
+  return {
+    title: post.title,
+    description: post.excerpt ?? undefined,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt ?? undefined,
+      type: "article",
+      publishedTime: post.publishedDate ?? undefined,
+      siteName: "Fozilbek",
+      locale: "uz_UZ",
+      images: [{ url: imageUrl, alt: post.title }],
+    },
+  };
+}
 
 export default async function BlogBySlug({
   params,
@@ -16,17 +45,7 @@ export default async function BlogBySlug({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const payload = await getPayloadClient();
-
-  const { docs } = await payload.find({
-    collection: "posts",
-    where: {
-      and: [{ status: { equals: "published" } }, { slug: { equals: slug } }],
-    },
-    limit: 1,
-  });
-
-  const post = docs[0];
+  const post = await getPost(slug);
 
   if (!post) notFound();
   const imageUrl =
