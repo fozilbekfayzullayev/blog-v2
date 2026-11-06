@@ -3,23 +3,23 @@ Next.js va Payload CMS asosida qurilgan blog sayti. Maqolalar, rasmlar galereyas
 ## Skrinshotlar
 
 ### Bosh sahifa
-![Bosh sahifa](<img width="2561" height="7282" alt="FireShot Capture 041 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/acf87e51-abc0-4cd4-9eda-9c4b024207dd" />)
+<img width="2561" height="7282" alt="FireShot Capture 041 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/acf87e51-abc0-4cd4-9eda-9c4b024207dd" />
 <!-- [SCREENSHOT: bosh sahifa] -->
 
 ### Bloglar ro'yxati
-![Bloglar](<img width="2561" height="2901" alt="FireShot Capture 042 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/904d5d7a-3005-4d88-bbe0-fc0d73079e82" />)
+<img width="2561" height="2901" alt="FireShot Capture 042 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/904d5d7a-3005-4d88-bbe0-fc0d73079e82" />
 <!-- [SCREENSHOT: bloglar ro'yxati] -->
 
 ### Blog posti
-![Blog posti](<img width="2561" height="3783" alt="FireShot Capture 045 - Birinchi hackathon (yoki hakaton) - Fozilbek -  www fozilbek dev" src="https://github.com/user-attachments/assets/ce88abde-8132-428f-a007-87f7832e07dd" />)
+<img width="2561" height="3783" alt="FireShot Capture 045 - Birinchi hackathon (yoki hakaton) - Fozilbek -  www fozilbek dev" src="https://github.com/user-attachments/assets/ce88abde-8132-428f-a007-87f7832e07dd" />
 <!-- [SCREENSHOT: bitta blog posti sahifasi] -->
 
 ### Galereya
-![Galereya](<img width="2561" height="4145" alt="FireShot Capture 043 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/63cce938-310d-45fb-89d4-58a26836d27c" />)
+<img width="2561" height="4145" alt="FireShot Capture 043 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/63cce938-310d-45fb-89d4-58a26836d27c" />
 <!-- [SCREENSHOT: galereya sahifasi] -->
 
 ### About me sahifa
-![About me](<img width="2561" height="1938" alt="FireShot Capture 044 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/00b24689-4b2e-46d1-a38c-74d7e1a2b92f" />)
+<img width="2561" height="1938" alt="FireShot Capture 044 - Fozilbek - Blog -  www fozilbek dev" src="https://github.com/user-attachments/assets/00b24689-4b2e-46d1-a38c-74d7e1a2b92f" />
 <!-- [SCREENSHOT: /about me] -->
 
 ## Imkoniyatlar
