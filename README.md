@@ -1,5 +1,3 @@
-<img width="2561" height="3783" alt="FireShot Capture 045 - Birinchi hackathon (yoki hakaton) - Fozilbek -  www fozilbek dev" src="https://github.com/user-attachments/assets/b45122f1-b754-4562-9b92-18ed3d934930" /># blog-v2
-
 Next.js va Payload CMS asosida qurilgan blog sayti. Maqolalar, rasmlar galereyasi va "Men haqimda" bo'limi bor. Kontentni admin panel orqali boshqarish mumkin.
 
 ## Skrinshotlar
